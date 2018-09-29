@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.modernity" version="0.0.1" name="Modernity" provider-name="Matthew Nash">
+	<requires>
+		<import addon="xbmc.gui" version="5.13.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="1.33" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="1.5" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="1.6" default="false" folder="xml" />
+		<res width="1800" height="1080" aspect="1.66" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="1.77" default="true" folder="xml" />
+		<res width="2040" height="1080" aspect="1.88" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="2" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="2.16" default="false" folder="xml" />
+		<res width="2560" height="1080" aspect="2.37" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Modernity skin.</summary>
+		<description lang="en_GB">Modernity is based upon the default skin Estuary, with personal changes.</description>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<source>https://github.com/dproudmoore/skin.modernity/</source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshot-04.jpg</screenshot>
+			<screenshot>resources/screenshot-05.jpg</screenshot>
+			<screenshot>resources/screenshot-06.jpg</screenshot>
+			<screenshot>resources/screenshot-07.jpg</screenshot>
+			<screenshot>resources/screenshot-08.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
