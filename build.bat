@@ -17,6 +17,7 @@ ECHO ----------------------------------------
 ECHO Creating XBT File...
 START /B /WAIT %base_dir%\Tools\TexturePacker\TexturePacker -dupecheck -input media -output %base_dir%\project\Win32BuildSetup\BUILD_WIN32\application\addons\skin.modernity\media\Textures.xbt
 START /B /WAIT %base_dir%\Tools\TexturePacker\TexturePacker -dupecheck -input themes\curial -output %base_dir%\project\Win32BuildSetup\BUILD_WIN32\application\addons\skin.modernity\media\curial.xbt
+START /B /WAIT %base_dir%\Tools\TexturePacker\TexturePacker -dupecheck -input themes\flat -output %base_dir%\project\Win32BuildSetup\BUILD_WIN32\application\addons\skin.modernity\media\flat.xbt
 
 ECHO ----------------------------------------
 ECHO XBT Texture Files Created...
