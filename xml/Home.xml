@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
@@ -108,6 +108,73 @@
 						<param name="scrollbar_id" value="5010"/>
 					</include>
 				</control>
+
+			<control type="group" id="51000">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),features)</visible>
+					<include content="Visible_Right_Delayed">
+						<param name="id" value="features"/>
+					</include>
+					<control type="grouplist" id="51001">
+						<include>WidgetGroupListCommon</include>
+						<pagecontrol>51010</pagecontrol>
+						<include content="WidgetListCategories" condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">
+							<param name="content_path" value="library://video/features/"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="51900"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/unwatched_features.xsp"/>
+							<param name="widget_header" value="$LOCALIZE[31007]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="51300"/>
+						</include>
+					</control>
+					<include content="ImageWidget" condition="!Library.HasContent(movies)">
+						<param name="text_label" value="$LOCALIZE[31104]" />
+						<param name="button_label" value="$LOCALIZE[31110]" />
+						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
+						<param name="button_id" value="51500"/>
+						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
+					</include>
+					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+						<param name="scrollbar_id" value="51010"/>
+					</include>
+				</control>
+
+			<control type="group" id="52000">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),shorts)</visible>
+					<include content="Visible_Right_Delayed">
+						<param name="id" value="shorts"/>
+					</include>
+					<control type="grouplist" id="52001">
+						<include>WidgetGroupListCommon</include>
+						<pagecontrol>51010</pagecontrol>
+						<include content="WidgetListCategories" condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">
+							<param name="content_path" value="library://video/shorts/"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="52900"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/unwatched_shorts.xsp"/>
+							<param name="widget_header" value="Unwatched shorts"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="52300"/>
+						</include>
+					</control>
+					<include content="ImageWidget" condition="!Library.HasContent(movies)">
+						<param name="text_label" value="$LOCALIZE[31104]" />
+						<param name="button_label" value="$LOCALIZE[31110]" />
+						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
+						<param name="button_id" value="52500"/>
+						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
+					</include>
+					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+						<param name="scrollbar_id" value="52010"/>
+					</include>
+				</control>
+
 				<control type="group" id="6000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
 					<include content="Visible_Right_Delayed">
@@ -885,7 +952,25 @@
 							<property name="menu_id">$NUMBER[5000]</property>
 							<thumb>icons/sidemenu/movies.png</thumb>
 							<property name="id">movies</property>
-							<visible>!Skin.HasSetting(HomeMenuNoMovieButton)</visible>
+							<visible>!Skin.HasSetting(HomeMenuNoMovieButton) + !Skin.HasSetting(HomeMenuSplitMovieButton)</visible>
+						</item>
+						<item>
+							<label>$LOCALIZE[342]</label>
+							<onclick condition="Library.HasContent(movies)">ActivateWindow(Videos,special://skin/playlists/features.xsp,return)</onclick>
+							<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,sources://video/,return)</onclick>
+							<property name="menu_id">$NUMBER[51000]</property>
+							<thumb>icons/sidemenu/movies.png</thumb>
+							<property name="id">features</property>
+							<visible>!Skin.HasSetting(HomeMenuNoMovieButton) + Skin.HasSetting(HomeMenuSplitMovieButton)</visible>
+						</item>
+						<item>
+							<label>Shorts</label>
+							<onclick condition="Library.HasContent(movies)">ActivateWindow(Videos,special://skin/playlists/shorts.xsp,return)</onclick>
+							<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,sources://video/,return)</onclick>
+							<property name="menu_id">$NUMBER[52000]</property>
+							<thumb>icons/sidemenu/movies.png</thumb>
+							<property name="id">shorts</property>
+							<visible>!Skin.HasSetting(HomeMenuNoShortButton)</visible>
 						</item>
 						<item>
 							<label>$LOCALIZE[20343]</label>

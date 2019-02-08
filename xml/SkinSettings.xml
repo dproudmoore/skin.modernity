@@ -151,6 +151,26 @@
 					<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
 					<enable>!Skin.HasSetting(HomeMenuNoMovieButton)</enable>
 				</control>
+				<control type="radiobutton" id="6111">
+					<label>- Split feature films from shorts</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(HomeMenuSplitMovieButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuSplitMovieButton)</onclick>
+					<enable>!Skin.HasSetting(HomeMenuNoMovieButton)</enable>
+				</control>
+				<control type="radiobutton" id="618">
+					<label>Shorts</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoShortButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoShortButton)</onclick>
+				</control>
+				<control type="button" id="6180">
+					<label>- $LOCALIZE[31157]</label>
+					<include>DefaultSettingButton</include>
+					<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
+					<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
+					<enable>!Skin.HasSetting(HomeMenuNoShortButton)</enable>
+				</control>
 				<control type="radiobutton" id="612">
 					<label>$LOCALIZE[20343]</label>
 					<include>DefaultSettingButton</include>

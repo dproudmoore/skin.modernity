@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Shorts</name>
+    <match>all</match>
+    <rule field="time" operator="lessthan">
+
+        <value>40:00</value>
+
+    </rule>
+</smartplaylist>
