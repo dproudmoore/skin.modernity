@@ -108,8 +108,7 @@
 						<param name="scrollbar_id" value="5010"/>
 					</include>
 				</control>
-
-			<control type="group" id="51000">
+				<control type="group" id="51000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),features)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="features"/>
@@ -141,8 +140,7 @@
 						<param name="scrollbar_id" value="51010"/>
 					</include>
 				</control>
-
-			<control type="group" id="52000">
+				<control type="group" id="52000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),shorts)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="shorts"/>

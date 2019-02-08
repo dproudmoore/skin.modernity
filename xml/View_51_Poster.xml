@@ -15,9 +15,9 @@
 			<height>720</height>
 			<control type="image">
 				<left>0</left>
-				<top>4</top>
+				<top>-26</top>
 				<width>100%</width>
-				<height>410</height>
+				<height>440</height>
 				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 				<animation effect="fade" time="200">VisibleChange</animation>
@@ -30,7 +30,7 @@
 				<include>OpenClose_Right</include>
 				<control type="fixedlist" id="51">
 					<left>0</left>
-					<top>0</top>
+					<top>-30</top>
 					<width>110%</width>
 					<height>704</height>
 					<focusposition>1</focusposition>
@@ -126,7 +126,7 @@
 			<include>OpenClose_Left</include>
 			<include>Visible_Left</include>
 			<control type="image">
-				<top>-16</top>
+				<top>-46</top>
 				<left>-16</left>
 				<width>516</width>
 				<height>756</height>
@@ -136,7 +136,7 @@
 			</control>
 			<control type="image">
 				<left>4</left>
-				<top>4</top>
+				<top>-26</top>
 				<width>476</width>
 				<height>716</height>
 				<fadetime>200</fadetime>
@@ -145,7 +145,7 @@
 			</control>
 			<control type="image">
 				<left>1</left>
-				<top>1</top>
+				<top>-31</top>
 				<width>482</width>
 				<height>721</height>
 				<visible>Control.HasFocus(51)</visible>
