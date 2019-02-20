@@ -110,7 +110,7 @@
 						<height>250</height>
 						<right>115</right>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
-						<label>$INFO[ListItem.Plot]</label>
+						<label>$VAR[ListOutlineVar]</label>
 						<shadowcolor>text_shadow</shadowcolor>
 						<visible>!ListItem.IsCollection</visible>
 					</control>
