@@ -348,9 +348,9 @@
 				<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
 			</control>
 			<control type="progress">
-				<left>35</left>
-				<top>350</top>
-				<width>250</width>
+				<left>30</left>
+				<top>380</top>
+				<width>260</width>
 				<height>1</height>
 				<texturebg></texturebg>
 				<midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
