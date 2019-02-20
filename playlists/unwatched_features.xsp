@@ -5,6 +5,11 @@
     <rule field="playlist" operator="is">
         <value>Features</value>
     </rule>
+    <rule field="time" operator="greaterthan">
+
+        <value>39:59</value>
+
+    </rule>
     <rule field="playcount" operator="is">
         <value>0</value>
     </rule>
