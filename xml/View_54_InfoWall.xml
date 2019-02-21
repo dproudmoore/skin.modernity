@@ -298,14 +298,6 @@
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>
-				<control type="image">
-					<left>30</left>
-					<top>320</top>
-					<width>80</width>
-					<height>80</height>
-					<texture>overlays/overlay-bg.png</texture>
-					<visible>Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
-				</control>
 			</control>
 			<control type="group">
 				<left>135</left>
