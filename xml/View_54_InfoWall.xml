@@ -297,6 +297,18 @@
 					<aspectratio>stretch</aspectratio>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>-10</top>
+					<width>300</width>
+					<height>430</height>
+					<texture colordiffuse="poster_diffuse" background="true">$INFO[ListItem.Art(poster)]</texture>
+					<aspectratio>stretch</aspectratio>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>!$PARAM[focused]</visible>
 				</control>
 			</control>
 			<control type="group">

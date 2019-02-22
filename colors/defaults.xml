@@ -17,4 +17,5 @@
 	<color name="disabled">40FFFFFF</color>
 	<color name="selected">FF11E7B1</color>
 	<color name="invalid">FFFF0000</color>
+	<color name="poster_diffuse">EE9C9C9C</color>
 </colors>
