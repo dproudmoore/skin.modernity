@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="PVRStatusImageVar">
 		<value condition="ListItem.IsRecording">windows/pvr/record.png</value>
@@ -242,9 +242,25 @@
 		<value condition="player.passthrough">dialogs/volume/volume.png</value>
 		<value>dialogs/volume/volume1.png</value>
 	</variable>
+	<variable name="LabelRuntimeHours">
+		<value condition="Integer.IsEqual(ListItem.Duration(hh),0)"></value>
+		<value condition="Integer.IsEqual(ListItem.Duration(hh),1)">$INFO[ListItem.Duration(h),, $LOCALIZE[31500]]</value>
+		<value condition="Integer.IsLess(ListItem.Duration(hh),10)">$INFO[ListItem.Duration(h),, $LOCALIZE[12392]]</value>
+		<value>$INFO[ListItem.Duration(hh),, $LOCALIZE[12392]]</value>
+	</variable>
+	<variable name="LabelRuntimeMinutes">
+		<value condition="Integer.IsEqual(ListItem.Duration(mm),0)"></value>
+		<value condition="Integer.IsEqual(ListItem.Duration(mm),1)">$INFO[ListItem.Duration(m),, $LOCALIZE[31501]]</value>
+		<value condition="Integer.IsLess(ListItem.Duration(mm),10)">$INFO[ListItem.Duration(m),, $LOCALIZE[12391]]</value>
+		<value>$INFO[ListItem.Duration(mm),, $LOCALIZE[12391]]</value>
+	</variable>
+	<variable name="LabelRuntime">
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Duration(hh),1)">$VAR[LabelRuntimeHours] $VAR[LabelRuntimeMinutes]</value>
+		<value>$VAR[LabelRuntimeMinutes]</value>
+	</variable>
 	<variable name="ListSubLabelVar">
 		<value condition="ListItem.IsCollection"></value>
-		<value>[COLOR grey]$INFO[ListItem.Year, (,)][/COLOR]</value>
+		<value>[COLOR grey]$INFO[ListItem.Year]  ∙  $VAR[LabelRuntime][/COLOR]</value>
 	</variable>
 	<variable name="ListOutlineVar">
 		<value condition="!String.IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
