@@ -135,13 +135,13 @@
 						</include>
 						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
 							<param name="content_path" value="special://skin/playlists/inprogress_shorts.xsp"/>
-							<param name="widget_header" value="In progress shorts"/>
+							<param name="widget_header" value="$LOCALIZE[31503]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="52100"/>
 						</include>
 						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
 							<param name="content_path" value="special://skin/playlists/unwatched_shorts.xsp"/>
-							<param name="widget_header" value="Unwatched shorts"/>
+							<param name="widget_header" value="$LOCALIZE[31504]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="52300"/>
 						</include>
@@ -924,7 +924,7 @@
 							<visible>!Skin.HasSetting(HomeMenuNoMovieButton) + Skin.HasSetting(HomeMenuSplitMovieButton)</visible>
 						</item>
 						<item>
-							<label>Shorts</label>
+							<label>$LOCALIZE[31502]</label>
 							<onclick condition="Library.HasContent(movies)">ActivateWindow(Videos,special://skin/playlists/shorts.xsp,return)</onclick>
 							<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,sources://video/,return)</onclick>
 							<property name="menu_id">$NUMBER[52000]</property>

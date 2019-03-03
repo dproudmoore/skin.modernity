@@ -738,3 +738,28 @@ msgstr ""
 msgctxt "#31163"
 msgid "Show Fanart background"
 msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31500"
+msgid "Hour"
+msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31501"
+msgid "Minute"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31502"
+msgid "Shorts"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31503"
+msgid "In progress shorts"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31504"
+msgid "Unwatched shorts"
+msgstr ""
