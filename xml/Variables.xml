@@ -260,7 +260,9 @@
 	</variable>
 	<variable name="ListSubLabelVar">
 		<value condition="ListItem.IsCollection"></value>
-		<value>[COLOR grey]$INFO[ListItem.Year]  ∙  $VAR[LabelRuntime][/COLOR]</value>
+		<value condition="Container.Content(movies)">[COLOR grey]$INFO[ListItem.Year]  ∙  $VAR[LabelRuntime][/COLOR]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)">[COLOR grey]$INFO[ListItem.Year]  ∙  $INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[20453][/COLOR]</value>
+		<value>[COLOR grey]$INFO[ListItem.Year][/COLOR]</value>
 	</variable>
 	<variable name="ListOutlineVar">
 		<value condition="!String.IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
