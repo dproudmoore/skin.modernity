@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_503_Thumbnail">
+		<control type="button" id="20000">
+			<description>Dummy button to get animations right (hide focusedlayout on animations)</description>
+			<include>HiddenObject</include>
+			<animation effect="fade" delay="500" time="0" start="100" end="0">Visible</animation>
+			<animation effect="fade" delay="500" time="0" start="100" end="0">WindowOpen</animation>
+			<onclick>noop</onclick>
+			<visible>Control.IsVisible(503)</visible>
+		</control>
+		<control type="group">
+			<description>Thumbnail Viewtype</description>
+			<centertop>50%</centertop>
+			<height>720</height>
+			<control type="group">
+				<visible>Control.IsVisible(503)</visible>
+				<include>Visible_Right</include>
+				<include>OpenClose_Right</include>
+				<control type="fixedlist" id="503">
+					<left>0</left>
+					<top>30</top>
+					<width>110%</width>
+					<height>704</height>
+					<focusposition>1</focusposition>
+					<movement>0</movement>
+					<pagecontrol>5199</pagecontrol>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<onleft>51</onleft>
+					<onup>9000</onup>
+					<ondown>5199</ondown>
+					<onright>51</onright>
+					<hitrect x="100" y="0" w="800" h="400" />
+					<visible>Container.Content(episodes)</visible>
+					<preloaditems>1</preloaditems>
+					<viewtype label="21371">icon</viewtype>
+					<itemlayout width="317">
+						<control type="group">
+							<left>-220</left>
+							<top>18</top>
+							<include>InfoWallEpisodeLayout</include>
+						</control>
+					</itemlayout>
+					<focusedlayout width="654">
+						<control type="group">
+							<control type="group">
+								<left>-220</left>
+								<top>18</top>
+								<visible>Container.OnScrollPrevious</visible>
+								<visible>Control.IsVisible(20000)</visible>
+								<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+								<include>InfoWallEpisodeLayout</include>
+							</control>
+							<control type="group">
+								<left>-40</left>
+								<top>18</top>
+								<visible>Container.OnScrollNext</visible>
+								<visible>Control.IsVisible(20000)</visible>
+								<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+								<include>InfoWallEpisodeLayout</include>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="group">
+					<top>80</top>
+					<control type="group">
+						<left>635</left>
+						<top>480</top>
+						<height>245</height>
+						<visible>ListItem.IsCollection + String.IsEmpty(ListItem.Plot)</visible>
+						<include content="InfoList">
+							<param name="bottom" value="0" />
+							<param name="sortby" value="year" />
+							<param name="sortorder" value="descending" />
+							<param name="font" value="font13" />
+						</include>
+					</control>
+					<control type="label">
+						<left>645</left>
+						<top>380</top>
+						<right>50</right>
+						<height>40</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font52_title</font>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<left>645</left>
+						<top>440</top>
+						<right>50</right>
+						<height>40</height>
+						<label>$VAR[ListSubLabelVar]</label>
+						<font>font37</font>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>630</left>
+						<top>495</top>
+						<right>95</right>
+						<height>265</height>
+						<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+						<animation effect="fade" time="200">VisibleChange</animation>
+						<texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+						<visible>!ListItem.IsCollection</visible>
+					</control>
+					<control type="textbox">
+						<left>645</left>
+						<top>500</top>
+						<height>250</height>
+						<right>115</right>
+						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+						<label>$VAR[ListOutlineVar]</label>
+						<font>font37</font>
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>!ListItem.IsCollection</visible>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<centertop>50%</centertop>
+			<height>670</height>
+			<left>101</left>
+			<depth>DepthContentPopout</depth>
+			<visible>Control.IsVisible(503)</visible>
+			<include>OpenClose_Left</include>
+			<include>Visible_Left</include>
+			<control type="image">
+				<top>5</top>
+				<left>-16</left>
+				<width>680</width>
+				<height>400</height>
+				<texture>colors/black.png</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="image">
+				<left>4</left>
+				<top>25</top>
+				<width>640</width>
+				<height>360</height>
+				<fadetime>200</fadetime>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultTVShows.png" background="true">$VAR[InfoWallThumbVar]</texture>
+			</control>
+			<control type="image">
+				<left>1</left>
+				<top>20</top>
+				<width>646</width>
+				<height>366</height>
+				<visible>Control.HasFocus(503)</visible>
+				<animation effect="fade" time="100">VisibleChange</animation>
+				<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+			</control>
+			<control type="group">
+				<left>216</left>
+				<top>-18</top>
+				<include content="RatingCircle">
+					<param name="animation" value="True" />
+				</include>
+			</control>
+		</control>
+	</include>
+</includes>
