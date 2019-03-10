@@ -122,9 +122,10 @@
 	<include name="InfoWallEpisodeLayout">
 		<param name="main_label">$INFO[ListItem.Title]</param>
 		<param name="sub_label">$INFO[ListItem.TVShowTitle]</param>
-		<param name="thumb_label">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode]</param>
+		<param name="thumb_label">$VAR[SeasonEpisodeLabel]</param>
 		<param name="fallback_image">DefaultTVShows.png</param>
 		<param name="focused">false</param>
+		<param name="watched_overlay">false</param>
 		<definition>
 			<control type="image">
 				<top>10</top>
@@ -177,6 +178,7 @@
 				<width>32</width>
 				<height>32</height>
 				<texture>$VAR[WallWatchedIconVar]</texture>
+				<visible>$PARAM[watched_overlay]</visible>
 			</control>
 			<control type="textbox">
 				<left>28</left>
@@ -186,7 +188,7 @@
 				<font>font12</font>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$INFO[ListItem.Title]</label>
 				<visible>Window.IsActive(videos)</visible>
 			</control>
 			<control type="group">

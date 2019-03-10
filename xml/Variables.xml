@@ -180,8 +180,6 @@
 	</variable>
 	<variable name="BannerLabel2Var">
 		<value condition="String.IsEqual(Listitem.DBType,tvshow)">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
-		<!-- <value>$INFO[ListItem.Year]</value>
-		 -->
 	</variable>
 	<variable name="VideoPlayerForwardRewindVar">
 		<value condition="Player.Forwarding2x | Player.Rewinding2x">2x</value>
@@ -262,6 +260,7 @@
 		<value condition="ListItem.IsCollection"></value>
 		<value condition="Container.Content(movies)">[COLOR grey]$INFO[ListItem.Year]  ∙  $VAR[LabelRuntime][/COLOR]</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons)">[COLOR grey]$INFO[ListItem.Year]  ∙  $INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[20453][/COLOR]</value>
+		<value condition="Container.Content(episodes)">[COLOR grey]$INFO[ListItem.Season,$LOCALIZE[20373] , ]$INFO[ListItem.Episode,$LOCALIZE[20359] ][/COLOR]</value>
 		<value>[COLOR grey]$INFO[ListItem.Year][/COLOR]</value>
 	</variable>
 	<variable name="ListOutlineVar">
