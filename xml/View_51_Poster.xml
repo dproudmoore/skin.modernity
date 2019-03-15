@@ -136,6 +136,17 @@
 				<texture>colors/black.png</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
+				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | String.IsEqual(ListItem.DBType,movie)</visible>
+			</control>
+			<control type="image">
+				<top>15</top>
+				<left>-16</left>
+				<width>516</width>
+				<height>516</height>
+				<texture>colors/black.png</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<visible>Container.Content(seasons) + !String.IsEqual(ListItem.DBType,movie)</visible>
 			</control>
 			<control type="image">
 				<left>4</left>
@@ -145,15 +156,37 @@
 				<fadetime>200</fadetime>
 				<aspectratio>scale</aspectratio>
 				<texture fallback="DefaultVideo.png" background="true">$VAR[PosterVar]</texture>
+				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | String.IsEqual(ListItem.DBType,movie)</visible>
+			</control>
+			<control type="image">
+				<left>4</left>
+				<top>35</top>
+				<width>476</width>
+				<height>476</height>
+				<fadetime>200</fadetime>
+				<aspectratio>scale</aspectratio>
+				<texture fallback="DefaultVideo.png" background="true">$VAR[PosterVar]</texture>
+				<visible>Container.Content(seasons) + !String.IsEqual(ListItem.DBType,movie)</visible>
 			</control>
 			<control type="image">
 				<left>1</left>
-				<top>-90</top>
+				<top>-89</top>
 				<width>482</width>
 				<height>721</height>
 				<visible>Control.HasFocus(51)</visible>
 				<animation effect="fade" time="100">VisibleChange</animation>
 				<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | String.IsEqual(ListItem.DBType,movie)</visible>
+			</control>
+			<control type="image">
+				<left>1</left>
+				<top>31</top>
+				<width>482</width>
+				<height>482</height>
+				<visible>Control.HasFocus(51)</visible>
+				<animation effect="fade" time="100">VisibleChange</animation>
+				<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+				<visible>Container.Content(seasons) + !String.IsEqual(ListItem.DBType,movie)</visible>
 			</control>
 			<control type="group">
 				<left>216</left>

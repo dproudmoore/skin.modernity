@@ -287,7 +287,18 @@
 					<texture colordiffuse="button_focus">colors/grey.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<visible>$PARAM[focused]</visible>
+					<visible>$PARAM[focused] + !String.IsEqual(ListItem.DBType,season)</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				<control type="image">
+					<left>6</left>
+					<top>51</top>
+					<width>308</width>
+					<height>308</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused] + String.IsEqual(ListItem.DBType,season)</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="image">
@@ -297,9 +308,18 @@
 					<height>430</height>
 					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
 					<aspectratio>stretch</aspectratio>
-					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<visible>$PARAM[focused]</visible>
+					<visible>$PARAM[focused] + !String.IsEqual(ListItem.DBType,season)</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>55</top>
+					<width>300</width>
+					<height>300</height>
+					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
+					<aspectratio>stretch</aspectratio>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused] + String.IsEqual(ListItem.DBType,season)</visible>
 				</control>
 				<control type="image">
 					<left>10</left>
@@ -310,7 +330,18 @@
 					<aspectratio>stretch</aspectratio>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<visible>!$PARAM[focused]</visible>
+					<visible>!$PARAM[focused] + !String.IsEqual(ListItem.DBType,season)</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>55</top>
+					<width>300</width>
+					<height>300</height>
+					<texture colordiffuse="poster_diffuse" background="true">$INFO[ListItem.Art(poster)]</texture>
+					<aspectratio>stretch</aspectratio>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>!$PARAM[focused] + String.IsEqual(ListItem.DBType,season)</visible>
 				</control>
 			</control>
 			<control type="group">
