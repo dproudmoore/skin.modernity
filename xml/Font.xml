@@ -111,6 +111,11 @@
 			<size>52</size>
 		</font>
 		<font>
+			<name>font72_title</name>
+			<filename>NotoSans-Bold.ttf</filename>
+			<size>72</size>
+		</font>
+		<font>
 			<name>font_MainMenu</name>
 			<filename>NotoSans-Bold.ttf</filename>
 			<size>60</size>

@@ -268,17 +268,38 @@
 		<value>$INFO[ListItem.Plot]</value>
 	</variable>
 	<variable name="VideoInfoMainLabelVar">
-		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
-		<value>$INFO[ListItem.Label]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</value>
+		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="VideoInfoSubLabelVar">
 		<value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Season]$INFO[ListItem.Episode,[COLOR grey]x[/COLOR],: ]$INFO[ListItem.TVShowTitle]</value>
-		<value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Tagline,[I],[/I]]</value>
+		<value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Tagline,[COLOR grey][I],[/I][/COLOR]]</value>
 		<value>$INFO[ListItem.Genre]</value>
 	</variable>
 	<variable name="VideoInfoBottomLabelVar">
 		<value condition="Control.HasFocus(8)">$INFO[ListItem.LastPlayed,$LOCALIZE[568]: ]</value>
 		<value condition="Control.HasFocus(6)">$INFO[ListItem.FileNameAndPath]</value>
+	</variable>
+	<variable name="VideoInfoGenresVar">
+		<value condition="ListItem.IsCollection"></value>
+		<value>[COLOR grey]$INFO[ListItem.Genre][/COLOR]</value>
+	</variable>
+	<variable name="VideoInfoFactsVar">
+		<value condition="ListItem.IsCollection"></value>
+		<value>$INFO[ListItem.Year,,[CR]]$INFO[ListItem.Genre,[COLOR grey],[/COLOR][CR]]$VAR[LabelRuntime]</value>
+	</variable>
+	<variable name="VideoInfoCrewVar">
+		<value condition="Window.IsActive(pictures)">$INFO[ListItem.Property(description),,[CR]]$INFO[ListItem.PictureDatetime,[COLOR button_focus]$LOCALIZE[552]:  [/COLOR],[CR]]$INFO[ListItem.PictureResolution,[COLOR button_focus]$LOCALIZE[169]:  [/COLOR],[CR]]$INFO[ListItem.PictureCamMake,[COLOR button_focus]$LOCALIZE[31041]:  [/COLOR],[CR]]$INFO[ListItem.PictureCamModel,[COLOR button_focus]$LOCALIZE[21823]:  [/COLOR],[CR]]</value>
+		<value condition="String.IsEqual(listitem.dbtype,artist)">$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]:  [/COLOR],[CR]]$INFO[ListItem.Property(Artist_YearsActive),[COLOR button_focus]$LOCALIZE[21898]:  [/COLOR],[CR]]$INFO[ListItem.Property(Artist_Style),[COLOR button_focus]$LOCALIZE[736]:  [/COLOR],[CR]]</value>
+		<value condition="String.IsEqual(listitem.dbtype,album)">$INFO[ListItem.Year,[COLOR button_focus]$LOCALIZE[345]:  [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]:  [/COLOR],[CR]]$INFO[ListItem.Property(album_label),[COLOR button_focus]$LOCALIZE[21899]:  [/COLOR],[CR]]$INFO[ListItem.Property(album_style),[COLOR button_focus]$LOCALIZE[736]:  [/COLOR],[CR]]</value>
+		<value condition="String.IsEqual(Listitem.DBType,season) | String.IsEqual(Listitem.DBType,tvshow)">$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]:  [/COLOR],[CR]]$INFO[ListItem.Premiered,[COLOR button_focus]$LOCALIZE[20416]:  [/COLOR]]</value>
+		<value>$INFO[ListItem.Director,[COLOR button_focus][B]$LOCALIZE[20339]:  [/B][/COLOR],[CR]]$INFO[ListItem.Writer,[COLOR button_focus][B]$LOCALIZE[20417]:  [/B][/COLOR],[CR]]</value>
+	</variable>
+	<variable name="ShiftRightTextBoxVar">
+		<value condition="Window.IsActive(pictures)">$INFO[ListItem.Size,[COLOR button_focus]$LOCALIZE[289]:  [/COLOR],[CR]]$INFO[ListItem.PictureAperture,[COLOR button_focus]$LOCALIZE[21826]:  [/COLOR],[CR]]$INFO[ListItem.PictureFocalLen,[COLOR button_focus]$LOCALIZE[21827]:  [/COLOR],[CR]]$INFO[ListItem.PictureExpTime,[COLOR button_focus]$LOCALIZE[21830]:  [/COLOR],[CR]]$INFO[ListItem.Date,[COLOR button_focus]$LOCALIZE[552]:  [/COLOR],[CR]]</value>
+		<value condition="String.IsEqual(listitem.dbtype,artist)">$INFO[ListItem.Property(artist_description)]</value>
+		<value condition="String.IsEqual(listitem.dbtype,album)">$INFO[ListItem.Property(album_description)]</value>
+		<value>$INFO[ListItem.Plot]</value>
 	</variable>
 	<variable name="NowPlayingBreadcrumbsVar">
 		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Title]</value>
@@ -456,5 +477,48 @@
 	<variable name="MasterModeLabel">
 		<value condition="!System.IsMaster">$LOCALIZE[20045]</value>
 		<value>$LOCALIZE[20046]</value>
+	</variable>
+	<variable name="FilmRatingFlagVar">
+		<!-- US (IMDB) -->
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Rated R)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Rated R)]">flags/filmrating/mpaa_r.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Rated PG-13)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Rated PG-13)]">flags/filmrating/mpaa_pg13.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Rated PG)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Rated PG)]">flags/filmrating/mpaa_pg.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Rated NC)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Rated NC)]">flags/filmrating/mpaa_nc17.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Rated G)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Rated G)]">flags/filmrating/mpaa_general.png</value>
+		<!-- US (TMDB) -->
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,R)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,R)]">flags/filmrating/mpaa_r.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,PG-13)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,PG-13)]">flags/filmrating/mpaa_pg13.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,PG)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,PG)]">flags/filmrating/mpaa_pg.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,NC-17)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,NC-17)]">flags/filmrating/mpaa_nc17.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,G)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,G)]">flags/filmrating/mpaa_general.png</value>
+		<!-- US (TV) -->
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,TV-14)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,TV-14)]">flags/filmrating/tv_14.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,TV-G)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,TV-G)]">flags/filmrating/tv_g.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,TV-MA)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,TV-MA)]">flags/filmrating/tv_ma.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,TV-PG)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,TV-PG)]">flags/filmrating/tv_pg.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,TV-Y7)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,TV-Y7)]">flags/filmrating/tv_y7.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + StringCompare(ListItem.MPAA,TV-Y)] | [IsEmpty(ListItem.MPAA) + StringCompare(VideoPlayer.mpaa,TV-Y)]">flags/filmrating/tv_y.png</value>
+		<!-- Australia -->
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Australia:R)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Australia:R)]">flags/filmrating/australia_r.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Australia:MA)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Australia:MA)]">flags/filmrating/australia_ma.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Australia:M)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Australia:M)]">flags/filmrating/australia_m.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Australia:PG)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Australia:PG)]">flags/filmrating/australia_pg.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Australia:G)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Australia:G)]">flags/filmrating/australia_g.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Australia:E)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Australia:E)]">flags/filmrating/australia_e.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Australia:X)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Australia:X)]">flags/filmrating/australia_x.png</value>
+		<!-- United Kingdom -->
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,UK:U)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,UK:U)]">flags/filmrating/bbfc_u.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,UK:PG)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,UK:PG)]">flags/filmrating/bbfc_pg.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,UK:12A)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,UK:12A)]">flags/filmrating/bbfc_12a.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,UK:12)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,UK:12)]">flags/filmrating/bbfc_12.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,UK:15)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,UK:15)]">flags/filmrating/bbfc_15.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,UK:18)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,UK:18)]">flags/filmrating/bbfc_18.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,UK:X)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,UK:X)]">flags/filmrating/bbfc_r18.png</value>
+		<!-- Germany -->
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Germany:0)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Germany:0)]">flags/filmrating/germany_0.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Germany:6)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Germany:6)]">flags/filmrating/germany_6.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Germany:12)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Germany:12)]">flags/filmrating/germany_12.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Germany:16)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Germany:16)]">flags/filmrating/germany_16.png</value>
+		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Germany:18)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Germany:18)]">flags/filmrating/germany_18.png</value>
 	</variable>
 </includes>
