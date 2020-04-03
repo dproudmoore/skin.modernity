@@ -371,7 +371,8 @@
 	</variable>
 	<!-- Breadcrumbs -->
 	<variable name="BreadcrumbsVideoVar">
-		<value condition="Container.Content(movies) | String.StartsWith(container.folderpath,library://video/movies/) | String.StartsWith(container.folderpath,videodb://movies)">$LOCALIZE[20342]</value>
+		<value condition="Container.Content(movies) + String.StartsWith(container.folderpath,special://skin/playlists/shorts)">$LOCALIZE[31502]</value>
+		<value condition="Container.Content(movies) | String.StartsWith(container.folderpath,library://video/movies/) | String.StartsWith(container.folderpath,videodb://movies)">$LOCALIZE[342]</value>
 		<value condition="Container.Content(musicvideos) | String.StartsWith(container.folderpath,library://video/musicvideos/) | String.StartsWith(container.folderpath,videodb://musicvideos)">$LOCALIZE[20389]</value>
 		<value condition="Container.Content(tvshows) | String.StartsWith(container.folderpath,library://video/tvshows/) | String.StartsWith(container.folderpath,videodb://tvshows)">$LOCALIZE[20343]</value>
 		<value condition="Container.Content(seasons)">$LOCALIZE[20343]</value>

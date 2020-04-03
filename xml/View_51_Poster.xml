@@ -19,7 +19,7 @@
 				<include>OpenClose_Right</include>
 				<control type="fixedlist" id="51">
 					<left>0</left>
-					<top>30</top>
+					<top>-50</top>
 					<width>110%</width>
 					<height>704</height>
 					<focusposition>1</focusposition>
@@ -64,7 +64,7 @@
 					</focusedlayout>
 				</control>
 				<control type="group">
-					<top>80</top>
+					<top>0</top>
 					<control type="group">
 						<left>635</left>
 						<top>480</top>
@@ -174,7 +174,6 @@
 				<width>482</width>
 				<height>721</height>
 				<visible>Control.HasFocus(51)</visible>
-				<animation effect="fade" time="100">VisibleChange</animation>
 				<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | String.IsEqual(ListItem.DBType,movie)</visible>
 			</control>
@@ -184,7 +183,6 @@
 				<width>482</width>
 				<height>482</height>
 				<visible>Control.HasFocus(51)</visible>
-				<animation effect="fade" time="100">VisibleChange</animation>
 				<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 				<visible>Container.Content(seasons) + !String.IsEqual(ListItem.DBType,movie)</visible>
 			</control>

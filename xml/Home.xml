@@ -1099,9 +1099,6 @@
 					<animation effect="fade" time="300">VisibleChange</animation>
 				</control>
 			</control>
-			<include content="TopBar">
-				<param name="breadcrumbs_label" value="" />
-			</include>
 			<control type="group">
 				<depth>DepthBars</depth>
 				<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
