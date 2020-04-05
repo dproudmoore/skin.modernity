@@ -19,7 +19,7 @@
 				<include>OpenClose_Right</include>
 				<control type="fixedlist" id="51">
 					<left>0</left>
-					<top>-50</top>
+					<top>-40</top>
 					<width>110%</width>
 					<height>704</height>
 					<focusposition>1</focusposition>
@@ -111,6 +111,7 @@
 						<top>500</top>
 						<height>250</height>
 						<right>115</right>
+						<align>justify</align>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 						<label>$VAR[ListOutlineVar]</label>
 						<font>font37</font>

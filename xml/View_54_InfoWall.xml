@@ -232,6 +232,9 @@
 		</definition>
 	</include>
 	<include name="InfoWallMovieLayout">
+		<param name="main_label">$INFO[ListItem.Label]</param>
+		<param name="sub_label">$INFO[ListItem.Year]</param>
+		<param name="labelled">false</param>
 		<param name="focused">false</param>
 		<definition>
 			<control type="group">
@@ -278,7 +281,27 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+				<visible>!String.IsEmpty(ListItem.Art(poster)) + !String.IsEqual(ListItem.DBType,season)</visible>
+				<control type="image">
+					<left>10</left>
+					<top>-10</top>
+					<width>300</width>
+					<height>430</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>!$PARAM[labelled]</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>-10</top>
+					<width>300</width>
+					<height>514</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[labelled]</visible>
+				</control>
 				<control type="image">
 					<left>6</left>
 					<top>-14</top>
@@ -287,61 +310,126 @@
 					<texture colordiffuse="button_focus">colors/grey.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<visible>$PARAM[focused] + !String.IsEqual(ListItem.DBType,season)</visible>
+					<visible>$PARAM[focused] + !$PARAM[labelled]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="image">
 					<left>6</left>
-					<top>51</top>
+					<top>-14</top>
+					<width>308</width>
+					<height>518</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused] + $PARAM[labelled]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>-10</top>
+					<width>300</width>
+					<height>430</height>
+					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
+					<aspectratio>stretch</aspectratio>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>-10</top>
+					<width>300</width>
+					<height>430</height>
+					<texture colordiffuse="poster_diffuse" background="true">$INFO[ListItem.Art(poster)]</texture>
+					<aspectratio>stretch</aspectratio>
+					<bordersize>20</bordersize>
+					<visible>!$PARAM[focused]</visible>
+				</control>
+				<control type="textbox">
+					<left>38</left>
+					<top>410</top>
+					<width>242</width>
+					<height>70</height>
+					<font>font12</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>$PARAM[main_label]</label>
+					<visible>!String.IsEqual(ListItem.DBType,season) + $PARAM[labelled]</visible>
+				</control>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Art(poster)) + String.IsEqual(ListItem.DBType,season)</visible>
+				<control type="image">
+					<left>10</left>
+					<top>70</top>
+					<width>300</width>
+					<height>300</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>!$PARAM[labelled]</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>70</top>
+					<width>300</width>
+					<height>384</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[labelled]</visible>
+				</control>
+				<control type="image">
+					<left>6</left>
+					<top>66</top>
 					<width>308</width>
 					<height>308</height>
 					<texture colordiffuse="button_focus">colors/grey.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<visible>$PARAM[focused] + String.IsEqual(ListItem.DBType,season)</visible>
+					<visible>$PARAM[focused] + !$PARAM[labelled]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				<control type="image">
+					<left>6</left>
+					<top>66</top>
+					<width>308</width>
+					<height>388</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused] + $PARAM[labelled]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="image">
 					<left>10</left>
-					<top>-10</top>
-					<width>300</width>
-					<height>430</height>
-					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
-					<aspectratio>stretch</aspectratio>
-					<bordersize>20</bordersize>
-					<visible>$PARAM[focused] + !String.IsEqual(ListItem.DBType,season)</visible>
-				</control>
-				<control type="image">
-					<left>10</left>
-					<top>55</top>
+					<top>70</top>
 					<width>300</width>
 					<height>300</height>
 					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
 					<aspectratio>stretch</aspectratio>
 					<bordersize>20</bordersize>
-					<visible>$PARAM[focused] + String.IsEqual(ListItem.DBType,season)</visible>
+					<visible>$PARAM[focused]</visible>
 				</control>
 				<control type="image">
 					<left>10</left>
-					<top>-10</top>
-					<width>300</width>
-					<height>430</height>
-					<texture colordiffuse="poster_diffuse" background="true">$INFO[ListItem.Art(poster)]</texture>
-					<aspectratio>stretch</aspectratio>
-					<bordertexture border="21">overlays/shadow.png</bordertexture>
-					<bordersize>20</bordersize>
-					<visible>!$PARAM[focused] + !String.IsEqual(ListItem.DBType,season)</visible>
-				</control>
-				<control type="image">
-					<left>10</left>
-					<top>55</top>
+					<top>70</top>
 					<width>300</width>
 					<height>300</height>
 					<texture colordiffuse="poster_diffuse" background="true">$INFO[ListItem.Art(poster)]</texture>
 					<aspectratio>stretch</aspectratio>
-					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<visible>!$PARAM[focused] + String.IsEqual(ListItem.DBType,season)</visible>
+					<visible>!$PARAM[focused]</visible>
+				</control>
+				<control type="textbox">
+					<left>38</left>
+					<top>380</top>
+					<width>242</width>
+					<height>70</height>
+					<font>font12</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>$PARAM[main_label]</label>
+					<visible>$PARAM[labelled]</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -355,9 +443,19 @@
 				<width>260</width>
 				<height>1</height>
 				<texturebg></texturebg>
-				<midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
+				<midtexture colordiffuse="selected" border="3">progress/texturebg_alt_white.png</midtexture>
 				<info>ListItem.PercentPlayed</info>
-				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0) + !$PARAM[labelled]</visible>
+			</control>
+			<control type="progress">
+				<left>30</left>
+				<top>370</top>
+				<width>260</width>
+				<height>1</height>
+				<texturebg></texturebg>
+				<midtexture colordiffuse="selected" border="3">progress/texturebg_alt_white.png</midtexture>
+				<info>ListItem.PercentPlayed</info>
+				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0) + $PARAM[labelled]</visible>
 			</control>
 		</definition>
 	</include>
