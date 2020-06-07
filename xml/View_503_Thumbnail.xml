@@ -155,6 +155,16 @@
 				<animation effect="fade" time="100">VisibleChange</animation>
 				<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 			</control>
+			<control type="progress">
+				<left>4</left>
+				<top>364</top>
+				<width>640</width>
+				<height>1</height>
+				<texturebg></texturebg>
+				<midtexture colordiffuse="selected" border="3">progress/texturebg_alt_white.png</midtexture>
+				<info>ListItem.PercentPlayed</info>
+				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+			</control>
 			<control type="group">
 				<left>216</left>
 				<top>-18</top>
