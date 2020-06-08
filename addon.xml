@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.modernity" version="0.0.2" name="Modernity" provider-name="Matthew Nash">
+<addon id="skin.modernity" version="0.0.3" name="Modernity" provider-name="Matthew Nash">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0"/>
 	</requires>

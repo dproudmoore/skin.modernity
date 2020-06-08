@@ -1,2 +1,11 @@
 ﻿﻿[B]0.0.1[/B]
 • Initial commit
+﻿[B]0.0.2[/B]
+• Added In Progress group to home screen
+• Diffused unfocused posters
+• Square images for TV seasons
+• Redesigned movie info view
+• Created thumbnail view for TV episodes
+﻿[B]0.0.3[/B]
+• Added movie titles to wall view
+• In progress bars added to additional views
