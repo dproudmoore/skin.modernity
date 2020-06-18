@@ -80,7 +80,7 @@
 					<control type="image">
 						<width>1246</width>
 						<height>278</height>
-						<texture border="21">dialogs/dialog-bg.png</texture>
+						<texture border="21" colordiffuse="dialog_background">dialogs/dialog-bg.png</texture>
 						<visible>false</visible>
 					</control>
 					<control type="grouplist">
@@ -134,7 +134,7 @@
 						<onleft>139</onleft>
 						<onright>139</onright>
 						<ondown>5000</ondown>
-						<texturenofocus border="21">dialogs/dialog-bg.png</texturenofocus>
+						<texturenofocus border="21" colordiffuse="dialog_background">dialogs/dialog-bg.png</texturenofocus>
 					</control>
 					<control type="textbox">
 						<left>40</left>
@@ -144,6 +144,7 @@
 						<align>justify</align>
 						<label fallback="19055">$INFO[ListItem.Plot]</label>
 						<autoscroll delay="10000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 				</control>
 				<control type="grouplist" id="5000">

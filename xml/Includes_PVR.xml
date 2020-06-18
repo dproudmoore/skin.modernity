@@ -27,7 +27,7 @@
 			<top>55</top>
 			<width>510</width>
 			<height>740</height>
-			<texture border="40">buttons/dialogbutton-nofo.png</texture>
+			<texture border="40" colordiffuse="button_unfocus">buttons/dialogbutton-nofo.png</texture>
 		</control>
 		<control type="list" id="$PARAM[list_id]">
 			<left>20</left>

@@ -96,14 +96,14 @@
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<control type="image">
-						<left>630</left>
-						<top>495</top>
-						<right>95</right>
-						<height>265</height>
+						<left>610</left>
+						<top>475</top>
+						<right>75</right>
+						<height>305</height>
 						<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 						<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 						<animation effect="fade" time="200">VisibleChange</animation>
-						<texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+						<texture border="21" colordiffuse="dialog_background">dialogs/dialog-bg.png</texture>
 						<visible>!ListItem.IsCollection</visible>
 					</control>
 					<control type="textbox">

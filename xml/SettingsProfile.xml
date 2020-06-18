@@ -47,7 +47,7 @@
 						<top>5</top>
 						<width>320</width>
 						<height>380</height>
-						<texture>dialogs/dialog-bg-nobo.png</texture>
+						<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 						<bordertexture border="21">overlays/shadow.png</bordertexture>
 						<bordersize>20</bordersize>
 					</control>
@@ -99,7 +99,7 @@
 							<top>5</top>
 							<width>320</width>
 							<height>380</height>
-							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>

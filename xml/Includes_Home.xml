@@ -30,7 +30,7 @@
 			<left>16</left>
 			<width>670</width>
 			<height>225</height>
-			<texture border="21">dialogs/dialog-bg.png</texture>
+			<texture border="21" colordiffuse="dialog_background">dialogs/dialog-bg.png</texture>
 		</control>
 		<control type="image">
 			<left>55</left>
@@ -146,7 +146,7 @@
 							<onclick>$PARAM[button_onclick]</onclick>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<texturenofocus border="40" colordiffuse="button_unfocus">buttons/dialogbutton-nofo.png</texturenofocus>
 							<visible>$PARAM[visible_1]</visible>
 						</control>
 						<control type="button" id="$PARAM[button_id]568">
@@ -158,7 +158,7 @@
 							<onclick>SetFocus(9000)</onclick>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<texturenofocus border="40" colordiffuse="button_unfocus">buttons/dialogbutton-nofo.png</texturenofocus>
 							<visible>$PARAM[visible_2]</visible>
 						</control>
 					</control>
@@ -322,7 +322,7 @@
 						<control type="image">
 							<width>316</width>
 							<height>200</height>
-							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
@@ -360,7 +360,7 @@
 						<control type="image">
 							<width>316</width>
 							<height>200</height>
-							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
@@ -469,7 +469,7 @@
 						<control type="image">
 							<width>319</width>
 							<height>340</height>
-							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
@@ -525,7 +525,7 @@
 						<control type="image">
 							<width>319</width>
 							<height>340</height>
-							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
@@ -606,7 +606,7 @@
 							<top>20</top>
 							<width>254</width>
 							<height>280</height>
-							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
@@ -657,7 +657,7 @@
 							<top>20</top>
 							<width>254</width>
 							<height>280</height>
-							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
@@ -836,7 +836,7 @@
 				<top>100</top>
 				<width>1820</width>
 				<height>920</height>
-				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
 			</control>
@@ -874,7 +874,7 @@
 			<aligny>center</aligny>
 			<textoffsetx>40</textoffsetx>
 			<textoffsety>0</textoffsety>
-			<texturenofocus border="21">buttons/button-nofo.png</texturenofocus>
+			<texturenofocus border="21" colordiffuse="button_unfocus">buttons/button-nofo.png</texturenofocus>
 			<animation effect="slide" end="0,-90" time="0" condition="true">Conditional</animation>
 			<texturefocus border="21" colordiffuse="button_focus">buttons/button-fo.png</texturefocus>
 			<font>font30_title</font>

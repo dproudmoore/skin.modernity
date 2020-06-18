@@ -31,7 +31,7 @@
 				<top>110</top>
 				<width>370</width>
 				<height>582</height>
-				<texture border="40">buttons/dialogbutton-nofo.png</texture>
+				<texture border="40" colordiffuse="button_unfocus">buttons/dialogbutton-nofo.png</texture>
 			</control>
 			<control type="grouplist" id="3">
 				<description>Controller profiles grouplist</description>
@@ -80,7 +80,7 @@
 					<top>20</top>
 					<bottom>0</bottom>
 					<right>0</right>
-					<texture border="40">buttons/dialogbutton-nofo.png</texture>
+					<texture border="40" colordiffuse="button_unfocus">buttons/dialogbutton-nofo.png</texture>
 				</control>
 				<control type="grouplist" id="5">
 					<description>Features grouplist</description>

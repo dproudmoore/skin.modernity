@@ -252,7 +252,7 @@
 				<left>0</left>
 				<width>100%</width>
 				<height>240</height>
-				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 			</control>
 			<control type="image">
 				<left>30</left>
@@ -306,7 +306,7 @@
 						<top>-240</top>
 						<right>20</right>
 						<height>350</height>
-						<texture>dialogs/dialog-bg-nobo.png</texture>
+						<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 						<bordertexture border="21">overlays/shadow.png</bordertexture>
 						<bordersize>20</bordersize>
 					</control>

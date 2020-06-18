@@ -608,7 +608,7 @@
 							<control type="image">
 								<bottom>90</bottom>
 								<width>100%</width>
-								<texture border="21">dialogs/dialog-bg.png</texture>
+								<texture border="21" colordiffuse="dialog_background">dialogs/dialog-bg.png</texture>
 							</control>
 							<control type="label">
 								<left>840</left>
@@ -871,7 +871,7 @@
 							<top>1</top>
 							<width>95</width>
 							<height>95</height>
-							<texture>$INFO[ListItem.Art(thumb)]</texture>
+							<texture colordiffuse="icon_focus">$INFO[ListItem.Art(thumb)]</texture>
 						</control>
 						<control type="label">
 							<left>104</left>
@@ -890,7 +890,7 @@
 							<top>1</top>
 							<width>95</width>
 							<height>95</height>
-							<texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
+							<texture colordiffuse="icon_unfocus">$INFO[ListItem.Art(thumb)]</texture>
 						</control>
 						<control type="label">
 							<left>104</left>

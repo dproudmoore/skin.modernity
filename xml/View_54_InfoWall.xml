@@ -7,7 +7,7 @@
 				<top>-10</top>
 				<width>376</width>
 				<height>380</height>
-				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
 			</control>
@@ -54,7 +54,7 @@
 				<top>0</top>
 				<width>316</width>
 				<height>386</height>
-				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
 			</control>
@@ -131,7 +131,7 @@
 				<top>10</top>
 				<width>316</width>
 				<height>288</height>
-				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
 			</control>
@@ -244,7 +244,7 @@
 					<top>-10</top>
 					<width>280</width>
 					<height>400</height>
-					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>
@@ -287,7 +287,7 @@
 					<top>-10</top>
 					<width>300</width>
 					<height>430</height>
-					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<visible>!$PARAM[labelled]</visible>
@@ -297,7 +297,7 @@
 					<top>-10</top>
 					<width>300</width>
 					<height>514</height>
-					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<visible>$PARAM[labelled]</visible>
@@ -363,7 +363,7 @@
 					<top>70</top>
 					<width>300</width>
 					<height>300</height>
-					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<visible>!$PARAM[labelled]</visible>
@@ -373,7 +373,7 @@
 					<top>70</top>
 					<width>300</width>
 					<height>384</height>
-					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<visible>$PARAM[labelled]</visible>

@@ -248,7 +248,7 @@
 		<radioposx>300</radioposx>
 		<font>font25_title</font>
 		<aligny>top</aligny>
-		<textcolor>button_focus</textcolor>
+		<textcolor>text_highlight</textcolor>
 	</include>
 	<include name="MediaMenuCommon">
 		<include>OpenClose_Left</include>
@@ -266,11 +266,13 @@
 			<animation effect="fade" time="200">VisibleChange</animation>
 		</control>
 		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>520</width>
-			<height>100%</height>
-			<texture border="0,0,52,0">lists/panel-mediamenu.png</texture>
+			<left>-40</left>
+			<top>-10%</top>
+			<width>530</width>
+			<height>120%</height>
+			<texture colordiffuse="menu_background">lists/panel.png</texture>
+			<bordertexture border="21">overlays/shadow.png</bordertexture>
+			<bordersize>20</bordersize>
 		</control>
 		<control type="button" id="6131">
 			<left>0</left>

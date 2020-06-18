@@ -79,7 +79,7 @@
 								<top>-100</top>
 								<width>900</width>
 								<height>350</height>
-								<texture border="40">buttons/dialogbutton-nofo.png</texture>
+								<texture border="40" colordiffuse="button_unfocus">buttons/dialogbutton-nofo.png</texture>
 							</control>
 							<control type="textbox">
 								<left>815</left>
