@@ -14,6 +14,7 @@
 	<color name="button_focus">FF41AEE6</color>
 	<color name="button_unfocus">C40C0C0C</color>
 	<color name="text_highlight">FF41AEE6</color>
+	<color name="text_fade">FFA0A0A0</color>
 	<color name="text_shadow">22000000</color>
 	<color name="border_alpha">60FFFFFF</color>
 	<color name="disabled">40FFFFFF</color>
