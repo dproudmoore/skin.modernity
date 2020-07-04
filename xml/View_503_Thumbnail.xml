@@ -165,13 +165,6 @@
 				<info>ListItem.PercentPlayed</info>
 				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
 			</control>
-			<control type="group">
-				<left>216</left>
-				<top>-18</top>
-				<include content="RatingCircle">
-					<param name="animation" value="True" />
-				</include>
-			</control>
 		</control>
 	</include>
 </includes>

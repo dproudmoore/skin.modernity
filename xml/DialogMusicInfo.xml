@@ -207,11 +207,6 @@
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.TrackNumber,[COLOR grey], - [/COLOR]]$INFO[ListItem.Label]</label>
 						</control>
-						<control type="group">
-							<left>230</left>
-							<top>28</top>
-							<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
-						</control>
 					</itemlayout>
 					<focusedlayout height="72.5" width="595" condition="Container.Content(albums)">
 						<control type="group">
@@ -229,11 +224,6 @@
 								<font>font12</font>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.TrackNumber,[COLOR white], - [/COLOR]]$INFO[ListItem.Label]</label>
-							</control>
-							<control type="group">
-								<left>230</left>
-								<top>28</top>
-								<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
 							</control>
 						</control>
 					</focusedlayout>
@@ -263,11 +253,6 @@
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2,[COLOR button_focus], - [/COLOR]]$INFO[ListItem.Label]</label>
-						</control>
-						<control type="group">
-							<left>230</left>
-							<top>28</top>
-							<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
 						</control>
 					</itemlayout>
 					<focusedlayout height="360" width="236" condition="Container.Content(artists)">
@@ -300,11 +285,6 @@
 								<aligny>center</aligny>
 								<autoscroll delay="1000" time="1000" repeat="1000">true</autoscroll>
 								<label>$INFO[ListItem.Label2,[COLOR button_focus], - [/COLOR]]$INFO[ListItem.Label]</label>
-							</control>
-							<control type="group">
-								<left>230</left>
-								<top>28</top>
-								<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
 							</control>
 							<control type="image">
 								<left>16</left>

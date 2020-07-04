@@ -36,9 +36,12 @@
 					<aspectratio align="center" aligny="bottom">scale</aspectratio>
 				</control>
 				<control type="group">
-					<left>600</left>
+					<left>0</left>
 					<top>82</top>
-					<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
+					<include condition="Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating) | Skin.HasSetting(star_onlinerating)" content="RatingStars">
+						<param name="width" value="1235" />
+						<param name="small" value="True" />
+					</include>
 				</control>
 				<control type="textbox">
 					<left>50</left>

@@ -112,11 +112,6 @@
 					<align>center</align>
 				</control>
 			</control>
-			<control type="group">
-				<left>133</left>
-				<top>2</top>
-				<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
-			</control>
 		</definition>
 	</include>
 	<include name="InfoWallEpisodeLayout">
@@ -224,11 +219,6 @@
 				<info>ListItem.PercentPlayed</info>
 				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
 			</control>
-			<control type="group">
-				<left>134</left>
-				<top>8</top>
-				<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
-			</control>
 		</definition>
 	</include>
 	<include name="InfoWallMovieLayout">
@@ -308,7 +298,7 @@
 					<left>10</left>
 					<top>-10</top>
 					<width>300</width>
-					<height>514</height>
+					<height>544</height>
 					<texture colordiffuse="dialog_background">dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
@@ -329,7 +319,7 @@
 					<left>6</left>
 					<top>-14</top>
 					<width>308</width>
-					<height>518</height>
+					<height>550</height>
 					<texture colordiffuse="button_focus">colors/grey.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
@@ -367,6 +357,25 @@
 					<scroll>$PARAM[focused]</scroll>
 					<scrollsuffix>  ∙  </scrollsuffix>
 					<scrollspeed>30</scrollspeed>
+					<visible>$PARAM[labelled]</visible>
+				</control>
+				<control type="group">
+					<left>10</left>
+					<top>460</top>
+					<visible>$PARAM[labelled]</visible>
+					<include condition="Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating) | Skin.HasSetting(star_onlinerating)" content="RatingStars">
+						<param name="width" value="198" />
+						<param name="small" value="True" />
+					</include>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>456</top>
+					<width>282</width>
+					<font>font12</font>
+					<align>right</align>
+					<aligny>top</aligny>
+					<label>[COLOR icon_unfocus]$INFO[ListItem.Year][/COLOR]</label>
 					<visible>$PARAM[labelled]</visible>
 				</control>
 			</control>
@@ -447,11 +456,6 @@
 					<scrollspeed>30</scrollspeed>
 					<visible>$PARAM[labelled]</visible>
 				</control>
-			</control>
-			<control type="group">
-				<left>135</left>
-				<top>-8</top>
-				<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
 			</control>
 			<control type="progress">
 				<left>30</left>

@@ -45,10 +45,6 @@
 							<aligny>center</aligny>
 							<visible>String.IsEmpty(ListItem.Art(banner)) + !Listitem.IsParentFolder</visible>
 						</control>
-						<control type="group">
-							<left>405</left>
-							<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
-						</control>
 					</control>
 				</itemlayout>
 				<focusedlayout height="220" width="900">
@@ -110,31 +106,20 @@
 							<control type="label">
 								<left>80</left>
 								<top>142</top>
-								<width>800</width>
+								<width>450</width>
 								<height>20</height>
 								<font>font12</font>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Label]</label>
 								<visible>!Listitem.IsParentFolder</visible>
 							</control>
-							<control type="image">
-								<right>220</right>
-								<top>143</top>
-								<width>22</width>
-								<height>22</height>
-								<texture>lists/rating.png</texture>
-								<visible>!String.IsEmpty(ListItem.Rating)</visible>
-							</control>
-							<control type="label">
-								<right>258</right>
-								<top>144</top>
-								<width>800</width>
-								<height>20</height>
-								<font>font12</font>
-								<align>right</align>
-								<aligny>center</aligny>
-								<label>$INFO[ListItem.Rating]</label>
-								<visible>!String.IsEmpty(ListItem.Rating)</visible>
+							<control type="group">
+								<left>514</left>
+								<top>138</top>
+								<include condition="Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating) | Skin.HasSetting(star_onlinerating)" content="RatingStars">
+									<param name="width" value="198" />
+									<param name="small" value="True" />
+								</include>
 							</control>
 							<control type="image">
 								<right>73</right>
@@ -154,10 +139,6 @@
 								<aligny>center</aligny>
 								<label>$VAR[BannerLabel2Var]</label>
 							</control>
-						</control>
-						<control type="group">
-							<left>405</left>
-							<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
 						</control>
 					</control>
 				</focusedlayout>

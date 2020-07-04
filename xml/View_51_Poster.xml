@@ -188,10 +188,10 @@
 				<visible>Container.Content(seasons) + !String.IsEqual(ListItem.DBType,movie)</visible>
 			</control>
 			<control type="group">
-				<left>216</left>
-				<top>-18</top>
-				<include content="RatingCircle">
-					<param name="animation" value="True" />
+				<left>4</left>
+				<top>650</top>
+				<include condition="Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating) | Skin.HasSetting(star_onlinerating)" content="RatingStars">
+					<param name="width" value="476" />
 				</include>
 			</control>
 		</control>

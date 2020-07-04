@@ -57,7 +57,7 @@
 				<control type="button" id="706">
 					<label>$LOCALIZE[31024]</label>
 					<include>DefaultSettingButton</include>
-					<onclick>Skin.SelectBool($LOCALIZE[31024], 38018|circle_userrating, 563|circle_rating, 16018|)</onclick>
+					<onclick>Skin.SelectBool($LOCALIZE[31024], 563|star_rating, 38018|star_userrating, 20220|star_onlinerating, 16018|)</onclick>
 					<label2>$VAR[RatingSettingLabel2Var]</label2>
 				</control>
 			</control>

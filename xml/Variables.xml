@@ -138,8 +138,9 @@
 		<value>$INFO[ListItem.AddonCreator,, - ]$INFO[ListItem.AddonVersion]</value>
 	</variable>
 	<variable name="RatingSettingLabel2Var">
-		<value condition="Skin.HasSetting(circle_rating)">$LOCALIZE[563]</value>
-		<value condition="Skin.HasSetting(circle_userrating)">$LOCALIZE[38018]</value>
+		<value condition="Skin.HasSetting(star_rating)">$LOCALIZE[563]</value>
+		<value condition="Skin.HasSetting(star_userrating)">$LOCALIZE[38018]</value>
+		<value condition="Skin.HasSetting(star_onlinerating)">$LOCALIZE[20220]</value>
 		<value>$LOCALIZE[16018]</value>
 	</variable>
 	<variable name="AddonsListIconVar">
@@ -294,7 +295,7 @@
 		<value condition="String.IsEqual(listitem.dbtype,artist)">$INFO[ListItem.Genre,[COLOR text_highlight]$LOCALIZE[515]:  [/COLOR],[CR]]$INFO[ListItem.Property(Artist_YearsActive),[COLOR text_highlight]$LOCALIZE[21898]:  [/COLOR],[CR]]$INFO[ListItem.Property(Artist_Style),[COLOR text_highlight]$LOCALIZE[736]:  [/COLOR],[CR]]</value>
 		<value condition="String.IsEqual(listitem.dbtype,album)">$INFO[ListItem.Year,[COLOR text_highlight]$LOCALIZE[345]:  [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR text_highlight]$LOCALIZE[515]:  [/COLOR],[CR]]$INFO[ListItem.Property(album_label),[COLOR text_highlight]$LOCALIZE[21899]:  [/COLOR],[CR]]$INFO[ListItem.Property(album_style),[COLOR text_highlight]$LOCALIZE[736]:  [/COLOR],[CR]]</value>
 		<value condition="String.IsEqual(Listitem.DBType,season) | String.IsEqual(Listitem.DBType,tvshow)">$INFO[ListItem.Genre,[COLOR text_highlight]$LOCALIZE[515]:  [/COLOR],[CR]]$INFO[ListItem.Premiered,[COLOR text_highlight]$LOCALIZE[20416]:  [/COLOR]]</value>
-		<value>$INFO[ListItem.Director,[COLOR text_highlight][B]$LOCALIZE[20339]:  [/B][/COLOR],[CR]]$INFO[ListItem.Writer,[COLOR text_highlight][B]$LOCALIZE[20417]:  [/B][/COLOR],[CR]]</value>
+		<value>$INFO[ListItem.Director,[COLOR text_highlight][B]$LOCALIZE[20339]:  [/B][/COLOR]]</value>
 	</variable>
 	<variable name="ShiftRightTextBoxVar">
 		<value condition="Window.IsActive(pictures)">$INFO[ListItem.Size,[COLOR button_focus]$LOCALIZE[289]:  [/COLOR],[CR]]$INFO[ListItem.PictureAperture,[COLOR button_focus]$LOCALIZE[21826]:  [/COLOR],[CR]]$INFO[ListItem.PictureFocalLen,[COLOR button_focus]$LOCALIZE[21827]:  [/COLOR],[CR]]$INFO[ListItem.PictureExpTime,[COLOR button_focus]$LOCALIZE[21830]:  [/COLOR],[CR]]$INFO[ListItem.Date,[COLOR button_focus]$LOCALIZE[552]:  [/COLOR],[CR]]</value>
@@ -522,5 +523,57 @@
 		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Germany:12)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Germany:12)]">flags/filmrating/germany_12.png</value>
 		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Germany:16)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Germany:16)]">flags/filmrating/germany_16.png</value>
 		<value condition="[!IsEmpty(ListItem.MPAA) + String.StartsWith(ListItem.MPAA,Germany:18)] | [IsEmpty(ListItem.MPAA) + String.StartsWith(VideoPlayer.mpaa,Germany:18)]">flags/filmrating/germany_18.png</value>
+	</variable>
+	<variable name="StarRatingFlagVar">
+		<!-- User Rating -->
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,10)]">flags/starrating/10.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,9)]">flags/starrating/9.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,8)]">flags/starrating/8.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,7)]">flags/starrating/7.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,6)]">flags/starrating/6.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,5)]">flags/starrating/5.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,4)]">flags/starrating/4.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,3)]">flags/starrating/3.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,2)]">flags/starrating/2.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,1)]">flags/starrating/1.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,0)]">flags/starrating/0.png</value>
+		<!-- Scraped Rating -->
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,10)]">flags/starrating/10.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,9)]">flags/starrating/9.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,8)]">flags/starrating/8.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,7)]">flags/starrating/7.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,6)]">flags/starrating/6.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,5)]">flags/starrating/5.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,4)]">flags/starrating/4.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,3)]">flags/starrating/3.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,2)]">flags/starrating/2.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,1)]">flags/starrating/1.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,0)]">flags/starrating/0.png</value>
+	</variable>
+	<variable name="BigStarRatingFlagVar">
+		<!-- User Rating -->
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,10)]">flags/starrating/big10.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,9)]">flags/starrating/big9.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,8)]">flags/starrating/big8.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,7)]">flags/starrating/big7.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,6)]">flags/starrating/big6.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,5)]">flags/starrating/big5.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,4)]">flags/starrating/big4.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,3)]">flags/starrating/big3.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,2)]">flags/starrating/big2.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,1)]">flags/starrating/big1.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)] + !IsEmpty(ListItem.UserRating) + String.StartsWith(ListItem.UserRating,0)]">flags/starrating/big0.png</value>
+		<!-- Scraped Rating -->
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,10)]">flags/starrating/big10.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,9)]">flags/starrating/big9.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,8)]">flags/starrating/big8.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,7)]">flags/starrating/big7.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,6)]">flags/starrating/big6.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,5)]">flags/starrating/big5.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,4)]">flags/starrating/big4.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,3)]">flags/starrating/big3.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,2)]">flags/starrating/big2.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,1)]">flags/starrating/big1.png</value>
+		<value condition="[[Skin.HasSetting(star_rating) | Skin.HasSetting(star_onlinerating)] + !IsEmpty(ListItem.Rating) + String.StartsWith(ListItem.Rating,0)]">flags/starrating/big0.png</value>
 	</variable>
 </includes>

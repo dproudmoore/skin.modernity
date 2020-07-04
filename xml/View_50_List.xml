@@ -37,17 +37,17 @@
 						<depth>DepthContentPopout</depth>
 						<left>38</left>
 						<right>36</right>
-						<top>120</top>
+						<top>60</top>
 						<bottom>124</bottom>
 						<fadetime>200</fadetime>
 						<aspectratio aligny="center">keep</aspectratio>
 						<texture fallback="DefaultVideo.png" background="true">$VAR[InfoWallThumbVar]</texture>
 					</control>
 					<control type="group">
-						<left>310</left>
+						<left>0</left>
 						<top>936</top>
-						<include content="RatingCircle">
-							<param name="animation" value="True" />
+						<include condition="Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating) | Skin.HasSetting(star_onlinerating)" content="RatingStars">
+							<param name="width" value="634" />
 						</include>
 					</control>
 				</control>
@@ -189,24 +189,27 @@
 					<visible>String.IsEqual(ListItem.DbType,episode)</visible>
 				</control>
 				<control type="group">
-					<left>273</left>
-					<top>590</top>
-					<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
+					<left>30</left>
+					<top>620</top>
+					<include condition="Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating) | Skin.HasSetting(star_onlinerating)" content="RatingStars">
+						<param name="width" value="530" />
+						<param name="small" value="True" />
+					</include>
 					<animation effect="slide" end="0,-140" time="0" condition="String.IsEqual(ListItem.DbType,episode)">conditional</animation>
 				</control>
 				<control type="group">
 					<visible>!Container.Content() | !String.isempty(ListItem.Plot)</visible>
 					<left>30</left>
 					<control type="textbox" id="15500">
-						<top>640</top>
+						<top>660</top>
 						<width>525</width>
-						<bottom>117</bottom>
+						<bottom>92</bottom>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 						<label>$VAR[ListBoxInfoVar]</label>
 						<visible>!String.IsEqual(ListItem.DbType,episode)</visible>
 					</control>
 					<control type="textbox" id="15501">
-						<top>485</top>
+						<top>510</top>
 						<width>525</width>
 						<bottom>96</bottom>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>

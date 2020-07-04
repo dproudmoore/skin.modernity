@@ -117,6 +117,46 @@
 						<height>auto</height>
 						<align>left</align>
 					</control>
+					<control type="group" id="6000">
+						<top>205</top>
+						<left>20</left>
+						<control type="button" id="7">
+							<description>Star rating control</description>
+							<left>0</left>
+							<top>0</top>
+							<width>314</width>
+							<height>64</height>
+							<texturefocus></texturefocus>
+							<texturenofocus></texturenofocus>
+							<enable>[Skin.HasSetting(star_rating) | Skin.HasSetting(star_userrating)]</enable>
+							<onup>50</onup>
+							<onleft>139</onleft>
+							<onright>139</onright>
+							<ondown>140</ondown>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>314</width>
+							<height>64</height>
+							<fadetime>200</fadetime>
+							<texture>$VAR[BigStarRatingFlagVar]</texture>
+							<aspectratio>keep</aspectratio>
+							<visible>!Control.HasFocus(7)</visible>
+							<animation effect="fade" time="100">VisibleChange</animation>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>314</width>
+							<height>64</height>
+							<fadetime>200</fadetime>
+							<texture colordiffuse="selected">$VAR[BigStarRatingFlagVar]</texture>
+							<aspectratio>keep</aspectratio>
+							<visible>Control.HasFocus(7)</visible>
+							<animation effect="fade" time="100">VisibleChange</animation>
+						</control>
+					</control>
 				</control>
 				<control type="group" id="140">
 					<top>408</top>
@@ -130,7 +170,7 @@
 						<onclick condition="!String.IsEmpty(ListItem.Plot)">SetProperty(TextViewer_Header,$LOCALIZE[207],home)</onclick>
 						<onclick condition="!String.IsEmpty(ListItem.Plot)">SetProperty(TextViewer_Text,$ESCINFO[ListItem.Plot],home)</onclick>
 						<onclick condition="!String.IsEmpty(ListItem.Plot)">ActivateWindow(1102)</onclick>
-						<onup>50</onup>
+						<onup>6000</onup>
 						<onleft>139</onleft>
 						<onright>139</onright>
 						<ondown>5000</ondown>
@@ -190,42 +230,6 @@
 						<param name="label" value="$LOCALIZE[31003]" />
 						<param name="visible" value="System.HasAddon(script.cinemavision) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)]" />
 					</include>
-					<control type="group" id="400">
-						<width>262</width>
-						<visible>Control.IsEnabled(7) | !String.IsEmpty(ListItem.UserRating)</visible>
-						<control type="button" id="7">
-							<include content="VideoInfoButtonsCommon">
-								<param name="icon" value="" />
-							</include>
-							<label>$LOCALIZE[31033]</label>
-							<onleft>441</onleft>
-							<onright>101</onright>
-							<onup>140</onup>
-							<enable>String.IsEmpty(Container.PluginName)</enable>
-							<ondown condition="Integer.IsEqual(Container(5000).CurrentItem,1)">SetFocus(50,0)</ondown>
-							<ondown condition="Integer.IsEqual(Container(5000).CurrentItem,2)">SetFocus(50,1)</ondown>
-							<ondown condition="Integer.IsEqual(Container(5000).CurrentItem,3)">SetFocus(50,2)</ondown>
-							<ondown condition="Integer.IsEqual(Container(5000).CurrentItem,4)">SetFocus(50,3)</ondown>
-							<ondown condition="Integer.IsEqual(Container(5000).CurrentItem,5)">SetFocus(50,4)</ondown>
-						</control>
-						<control type="label">
-							<label>$INFO[ListItem.UserRating]</label>
-							<font>font45_title</font>
-							<left>0</left>
-							<top>24</top>
-							<width>262</width>
-							<align>center</align>
-						</control>
-						<control type="image">
-							<texture>icons/infodialogs/rating.png</texture>
-							<left>107</left>
-							<top>30</top>
-							<width>48</width>
-							<height>48</height>
-							<align>center</align>
-							<visible>String.IsEmpty(ListItem.UserRating)</visible>
-						</control>
-					</control>
 					<include content="InfoDialogButton">
 						<param name="id" value="101" />
 						<param name="icon" value="icons/infodialogs/info.png" />
