@@ -9,3 +9,7 @@
 ﻿[B]0.0.3[/B]
 • Added movie titles to wall view
 • In progress bars added to additional views
+﻿[B]0.0.4[/B]
+• Allowed movie titles in wall view to scroll
+• Replaced circle ratings with star ratings
+• Added new colour schemes
