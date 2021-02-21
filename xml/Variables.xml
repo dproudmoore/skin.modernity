@@ -258,6 +258,9 @@
 		<value condition="Integer.IsGreaterOrEqual(ListItem.Duration(hh),1)">$VAR[LabelRuntimeHours] $VAR[LabelRuntimeMinutes]</value>
 		<value>$VAR[LabelRuntimeMinutes]</value>
 	</variable>
+	<variable name="LabelTotalEpisodes">
+		<value condition="!String.IsEmpty(ListItem.Property(TotalEpisodes))">$INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[20453]</value>
+	</variable>
 	<variable name="ListSubLabelVar">
 		<value condition="ListItem.IsCollection"></value>
 		<value condition="Container.Content(movies)">[COLOR grey]$INFO[ListItem.Year]  ∙  $VAR[LabelRuntime][/COLOR]</value>
@@ -276,7 +279,6 @@
 	<variable name="VideoInfoSubLabelVar">
 		<value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Season]$INFO[ListItem.Episode,[COLOR text_fade]x[/COLOR],: ]$INFO[ListItem.TVShowTitle]</value>
 		<value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Tagline,[COLOR text_fade][I],[/I][/COLOR]]</value>
-		<value>$INFO[ListItem.Genre]</value>
 	</variable>
 	<variable name="VideoInfoBottomLabelVar">
 		<value condition="Control.HasFocus(8)">$INFO[ListItem.LastPlayed,$LOCALIZE[568]: ]</value>
@@ -288,13 +290,12 @@
 	</variable>
 	<variable name="VideoInfoFactsVar">
 		<value condition="ListItem.IsCollection"></value>
-		<value>$INFO[ListItem.Year,,[CR]]$INFO[ListItem.Genre,[COLOR text_fade],[/COLOR][CR]]$VAR[LabelRuntime]</value>
+		<value>$INFO[ListItem.Year,,[CR]]$INFO[ListItem.Genre,[COLOR text_fade],[/COLOR][CR]]$VAR[LabelRuntime]$VAR[LabelTotalEpisodes]</value>
 	</variable>
 	<variable name="VideoInfoCrewVar">
 		<value condition="Window.IsActive(pictures)">$INFO[ListItem.Property(description),,[CR]]$INFO[ListItem.PictureDatetime,[COLOR text_highlight]$LOCALIZE[552]:  [/COLOR],[CR]]$INFO[ListItem.PictureResolution,[COLOR text_highlight]$LOCALIZE[169]:  [/COLOR],[CR]]$INFO[ListItem.PictureCamMake,[COLOR text_highlight]$LOCALIZE[31041]:  [/COLOR],[CR]]$INFO[ListItem.PictureCamModel,[COLOR text_highlight]$LOCALIZE[21823]:  [/COLOR],[CR]]</value>
 		<value condition="String.IsEqual(listitem.dbtype,artist)">$INFO[ListItem.Genre,[COLOR text_highlight]$LOCALIZE[515]:  [/COLOR],[CR]]$INFO[ListItem.Property(Artist_YearsActive),[COLOR text_highlight]$LOCALIZE[21898]:  [/COLOR],[CR]]$INFO[ListItem.Property(Artist_Style),[COLOR text_highlight]$LOCALIZE[736]:  [/COLOR],[CR]]</value>
 		<value condition="String.IsEqual(listitem.dbtype,album)">$INFO[ListItem.Year,[COLOR text_highlight]$LOCALIZE[345]:  [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR text_highlight]$LOCALIZE[515]:  [/COLOR],[CR]]$INFO[ListItem.Property(album_label),[COLOR text_highlight]$LOCALIZE[21899]:  [/COLOR],[CR]]$INFO[ListItem.Property(album_style),[COLOR text_highlight]$LOCALIZE[736]:  [/COLOR],[CR]]</value>
-		<value condition="String.IsEqual(Listitem.DBType,season) | String.IsEqual(Listitem.DBType,tvshow)">$INFO[ListItem.Genre,[COLOR text_highlight]$LOCALIZE[515]:  [/COLOR],[CR]]$INFO[ListItem.Premiered,[COLOR text_highlight]$LOCALIZE[20416]:  [/COLOR]]</value>
 		<value>$INFO[ListItem.Director,[COLOR text_highlight][B]$LOCALIZE[20339]:  [/B][/COLOR]]</value>
 	</variable>
 	<variable name="ShiftRightTextBoxVar">
